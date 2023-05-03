@@ -1,6 +1,7 @@
 use sqlx::{Connection, PgConnection};
 use std::net::TcpListener;
 use zero2prod::configuration::get_configuration;
+use zero2prod::startup::run;
 
 #[tokio::test]
 async fn health_check_works() {
