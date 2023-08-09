@@ -12,7 +12,7 @@ async fn main() -> Result<(), std::io::Error> {
     let configuration = get_configuration().expect("failed to read configuration.");
     let connection_pool = PgPoolOptions::new()
         .acquire_timeout(std::time::Duration::from_secs(2))
-        .connect_lazy(&configuration.database.connection_string().expose_secret())
+        .connect_lazy(configuration.database.connection_string().expose_secret())
         .expect("Failed to create Postgres connection pool.");
     let address = format!(
         "{}:{}",
