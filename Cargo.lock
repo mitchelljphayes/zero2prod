@@ -2657,7 +2657,6 @@ dependencies = [
  "serde",
  "serde-aux",
  "sqlx",
- "time 0.3.25",
  "tokio",
  "tracing",
  "tracing-actix-web",
