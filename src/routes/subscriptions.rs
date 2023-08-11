@@ -1,3 +1,5 @@
+//! src/routes/subscriptions.rs
+
 use crate::domain::{NewSubscriber, SubscriberEmail, SubscriberName};
 use actix_web::{web, HttpResponse};
 use chrono::Utc;
