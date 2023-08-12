@@ -5,6 +5,7 @@ use reqwest::Client;
 use secrecy::{ExposeSecret, Secret};
 
 #[allow(dead_code)]
+#[derive(Debug)]
 pub struct EmailClient {
     http_client: Client,
     base_url: String,
