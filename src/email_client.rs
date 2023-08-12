@@ -29,6 +29,10 @@ impl EmailClient {
         }
     }
 
+    #[tracing::instrument(
+        name = "Send Email"
+        skip(html_content, text_content)
+    )]
     pub async fn send_email(
         &self,
         recipient: SubscriberEmail,
@@ -54,6 +58,7 @@ impl EmailClient {
             .send()
             .await?
             .error_for_status()?;
+        tracing::info!("Token: {}", self.authorization_token.expose_secret());
 
         Ok(())
     }
