@@ -35,9 +35,9 @@ services:
     - key: APP_APPLICATION__BASE_URL
       scope: RUN_TIME
       value: ${APP_URL}
-    - key: APP_APPLICATION__POSTMARK_TOKEN
+    - key: APP_EMAIL_CLIENT__AUTHORIZATION_TOKEN
       scope: RUN_TIME
-      value: ${APP_POSTMARK_TOKEN}
+      value: ${POSTMARK_TOKEN}
 databases:
 - engine: PG
   name: newsletter
