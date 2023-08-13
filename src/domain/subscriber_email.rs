@@ -10,7 +10,7 @@ impl SubscriberEmail {
         if validate_email(&input) {
             Ok(Self(input))
         } else {
-            Err(format!("{input} is not a valid subscriber email."))
+            Err(format!("{} is not a valid subscriber email.", input))
         }
     }
 }
