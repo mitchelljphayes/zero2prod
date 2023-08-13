@@ -10,5 +10,5 @@ database:
 email_client:
   base_url: "localhost"
   sender_email: "zero2prod@zbra.club"
-  authorization_token: "3dc6eaaa-a239-4852-a6d5-36578f32cf91"
+  authorization_token: "token"
   timeout_milliseconds: 10000

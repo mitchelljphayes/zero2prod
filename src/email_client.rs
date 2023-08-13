@@ -58,8 +58,6 @@ impl EmailClient {
             .send()
             .await?
             .error_for_status()?;
-        tracing::info!("Token: {}", self.authorization_token.expose_secret());
-
         Ok(())
     }
 }
