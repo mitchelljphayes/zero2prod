@@ -163,19 +163,6 @@ pub async fn spawn_app() -> TestApp {
     test_app
 }
 
-// async fn add_test_user(pool: &PgPool) {
-//     sqlx::query!(
-//         "INSERT INTO users (user_id, username, password_hash)
-//         VALUES ($1, $2, $3)",
-//         Uuid::new_v4(),
-//         Uuid::new_v4().to_string(),
-//         Uuid::new_v4().to_string(),
-//     )
-//     .execute(pool)
-//     .await
-//     .expect("Failed to create test users.");
-// }
-
 async fn configure_database(config: &DatabaseSettings) -> PgPool {
     let mut connection = PgConnection::connect_with(&config.without_db())
         .await
