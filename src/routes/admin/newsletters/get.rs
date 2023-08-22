@@ -30,13 +30,13 @@ pub async fn publish_newsletter_form(
                     <input
                         type="text"
                         placeholder="Enter newsletter title"
-                        name="newsletter_title"
+                        name="title"
                     >
                 </label>
                 <br>
                 <label>HTML newsletter:<br>
                     <textarea
-                        name="newsletter_html"
+                        name="html_content"
                         rows="25"
                         cols="65"
                     >
@@ -45,7 +45,7 @@ pub async fn publish_newsletter_form(
                 <br>
                 <label>Plain text newsletter:<br>
                     <textarea
-                        name="newsletter_plain_text"
+                        name="text_content"
                         rows="25"
                         cols="65"
                     >
