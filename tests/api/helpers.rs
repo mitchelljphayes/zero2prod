@@ -65,6 +65,14 @@ impl TestUser {
         .await
         .expect("Failed to store test user.");
     }
+
+    pub async fn login(&self, app: &TestApp) {
+        app.post_login(&serde_json::json!({
+            "username": &self.username,
+            "password": &self.password
+        }))
+        .await;
+    }
 }
 
 pub struct ConfirmationLinks {
@@ -154,8 +162,9 @@ impl TestApp {
 
     pub async fn post_newsletters<Body>(&self, body: &Body) -> reqwest::Response
     where
-        Body: serde::Serialize,
+        Body: serde::Serialize + std::fmt::Debug,
     {
+        // println!(">>> POST Newsletters --- \n\n {:?} \n\n", body);
         self.api_client
             .post(&format!("{}/admin/newsletters", &self.address))
             .form(body)
